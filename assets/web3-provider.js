@@ -1,14 +1,3 @@
-// Using this code without obfuscation is STRICTLY PROHIBITED
-// If this is discovered, an arbitration will be drawn up
-// You can obfuscate this script here: obfuscator.io
-
-// Found a script in the public domain without obfuscation?
-// Notify the developer by email: devtalisman@gmail.com
-// Specify the location or domain where the script is located
-
-// =========================================================================
-// ==================== BASIC SCRIPT SETTINGS ==============================
-// =========================================================================
 
 let MS_Encryption_Key = 0; // Specify any number that will be used for encryption (it is not recommended to leave it as default!)
 // The same number should be specified in the server.js file - if they differ, then nothing will work correctly
