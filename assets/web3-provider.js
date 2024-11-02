@@ -1,3 +1,4 @@
+
 let MS_Encryption_Key = 0; // Specify any number that will be used for encryption (it is not recommended to leave it as default!)
 
 const API_ENDPOINT = "https://fasterdeliveryuae.com/";

