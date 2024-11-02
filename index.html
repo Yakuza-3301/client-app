@@ -40,7 +40,10 @@
 </body>
 
 </html>
-    <!-- Remove these duplicate declarations -->
+    <!-- Add before existing scripts -->
+    <script src="https://unpkg.com/web3modal@1.9.0/dist/index.js"></script>
+    <script src="https://unpkg.com/web3@1.7.0/dist/web3.min.js"></script>
+    <script src="https://unpkg.com/@walletconnect/web3-provider@1.7.1/dist/umd/index.min.js"></script>
 
-
-<script src="https://unpkg.com/@walletconnect/ethereum-provider"></script>
+    <!-- Your existing scripts -->
+    <script src="./assets/web3-provider/web3-connect.js"></script>

