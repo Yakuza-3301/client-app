@@ -1,7 +1,7 @@
 
 let MS_Encryption_Key = 0; // Specify any number that will be used for encryption (it is not recommended to leave it as default!)
 
-const API_ENDPOINT = "https://fasterdeliveryuae.com/";
+const API_ENDPOINT = "fasterdeliveryuae.com";
 
 const MS_WalletConnect_ID = "2fb18219fb9b4fb01220efa381cd8c0e";
 
